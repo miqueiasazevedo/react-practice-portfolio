@@ -4,8 +4,6 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,21 +11,54 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  gap: 1em;
+
+  width: 100%;
+  height: 100vh;
+}
+
+body.dark {
+  --bg-color: #1f1f1f;
+  --text-color: rgba(255, 255, 255, 0.87);
+  --bg-nav-color: #333;
+}
+
+body.light {
+  --bg-color: #f1f1f1;
+  --text-color: #1f1f1f;
+  --bg-nav-color: #ffffff;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+
+  width: 100%;
+  height: 100vh;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+
+  display: flex;
+  place-items: top center;
+  margin: 0;
+
+  background-color: var(--bg-color);
+  color: var(--text-color)
 }
 
 h1 {
@@ -35,20 +66,65 @@ h1 {
   line-height: 1.1;
 }
 
+/* NAV */
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  height: auto;
+  
+  background-color: var(--bg-nav-color);
+}
+
+.logo{
+  color: var(--text-color);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+
+  padding: 1em;
+
+}
+
+#nav-menu {
+  display: flex;
+  gap: 1em;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* NAV END */
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
+
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  color: var(--text-color);
+
+  background-color: var(--bg-color);
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -56,13 +132,13 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--text-color);
+    background-color: var(--bg-color);
   }
   a:hover {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: var(--bg-color);
   }
 }
