@@ -1,16 +1,10 @@
-import NavMenu from './components/NavMenu';
-import { ThemeProvider} from './theme/ThemeContext';
+import AppThemeSupport from './challenges/ThemeSupportContextApi';
 
 function App() {
   return (
-    <ThemeProvider>
-        <div className="App">
-          <div className="nav-container">
-            <NavMenu />
-        </div>
-            <h1>Welcome to React</h1>
-      </div>
-    </ThemeProvider>
+    <>
+    <AppThemeSupport />
+    </>
   );
 }
 
