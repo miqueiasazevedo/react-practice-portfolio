@@ -1,7 +1,7 @@
 //Menu com 4 itens e um botão para alterar o tema
 import React from 'react';
 import { useContext } from 'react';
-import { ThemeContext } from '../theme/ThemeContext';
+import { ThemeContext } from '../challenges/ThemeSupportContextApi/ThemeContext';
 
 function NavMenu() {
     const { theme, toggleTheme } = useContext(ThemeContext);
