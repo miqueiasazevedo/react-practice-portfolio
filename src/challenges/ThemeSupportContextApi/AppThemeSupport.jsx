@@ -1,5 +1,5 @@
 import NavMenu from '../../components/NavMenu';
-import { ThemeProvider} from '../../theme/ThemeContext';
+import { ThemeProvider} from './ThemeContext';
 
 function AppThemeSupport() {
   return (
